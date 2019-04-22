@@ -67,5 +67,6 @@ var GSolver={solve:function(lines,points,vccidx,gndidx){//graph sover
     console.log(res);
     console.log("voltage:"+res._data[idxArr[vccidx]]);
     console.log("resisitance:"+(res._data[idxArr[vccidx]]));
+    alert("Resistance:"+res._data[idxArr[vccidx]]+"Ω");
     //var CMat=math.zeros(lines.length,points.length);
 }};
