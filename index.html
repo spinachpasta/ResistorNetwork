@@ -1,0 +1,25 @@
+<html>
+    <body style="background:gray;">
+        <input type="radio" name="mode" value="line"> line
+        <input type="radio" name="mode" value="point"> point
+        <input type="radio" name="mode" value="select"> select
+        <div id="d"></div>
+        <input id="voltage" type="number" name="voltage" min="0" />
+        <button onclick="setgnd()" id="gnd">set as GND</button>
+        <button onclick="setvcc()" id="vcc">set as VCC</button>
+        <button onclick="deleteitem()">delete</button>
+        <button onclick="solve()">solve!!</button>
+        <br>
+        <canvas id="canvas" width="600" height="600"></canvas>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kQU-HPeF4X4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <script
+                src="https://code.jquery.com/jquery-3.4.0.min.js"
+                integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.9.0/math.min.js"></script>
+        <script src="VoltageLaw.js"></script>
+        <script src="GraphSolver.js"></script>
+        <script src="UI.js"></script>
+    </body>
+</html>

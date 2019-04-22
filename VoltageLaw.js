@@ -1,0 +1,24 @@
+var KVL={
+    Point:function(){
+        this.type="point";
+        this.uuid=Math.random();
+        this.x=0;
+        this.y=0;
+        this.z=0;
+        this.index=0;
+        this.FromObj=function(obj){
+            this.connected=obj.connected;
+            this.x=obj.x;
+            this.y=obj.y;
+            this.z=obj.z;
+        };
+        this.result=undefined;
+    },
+    Line:function(from,to,V){
+        this.type="line";
+        this.from=from;
+        this.to=to;
+        this.voltage=V;
+        this.current=0;
+    }
+};
