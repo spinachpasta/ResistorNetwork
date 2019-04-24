@@ -24,7 +24,7 @@ var vcc=1;
 
 var button_gnd=document.getElementById("gnd");
 var button_vcc=document.getElementById("vcc");
-
+var button_delete=document.getElementById("delete");
 var img_gnd=document.createElement("img");
 var img_vcc=document.createElement("img");
 img_gnd.src="gnd.png";
@@ -94,9 +94,11 @@ function processUI2(isSelect){
         vBox.style.visibility="hidden";
         button_gnd.style.visibility="hidden";
         button_vcc.style.visibility="hidden";
+        button_delete.style.visibility="hidden";
         return;
     }
     if(selected){
+        button_delete.style.visibility="visible";
         if(selected.type=="line"){
             vBox.style.visibility="visible";
             button_gnd.style.visibility="hidden";
@@ -108,6 +110,7 @@ function processUI2(isSelect){
             button_vcc.style.visibility="visible";
         }
     }else{
+        button_delete.style.visibility="hidden";
         vBox.style.visibility="hidden";
         button_gnd.style.visibility="hidden";
         button_vcc.style.visibility="hidden";
@@ -179,17 +182,19 @@ function select(x,y){
 }
 function updateradio(){
     //console.log("sa");
+    if(mode=="select"){
+        processUI2(true);
+    }else{
+        processUI2(false);
+    }
     switch(mode){
         case "point":
             pselect=-1;
-            processUI2(false);
             break;
         case "select":
             pselect=-1;
-            processUI2(true);
             break;
         case "line":
-            processUI2(false);
             break;
     }
 }
